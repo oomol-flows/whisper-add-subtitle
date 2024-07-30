@@ -1,0 +1,39 @@
+inputs_def:
+  - handle: ffmpeg_video
+    description: Input
+    json_schema:
+      contentMediaType: oomol/var
+      type:
+        - string
+        - number
+        - integer
+        - boolean
+        - object
+        - array
+        - "null"
+    value: ""
+  - handle: ffmpeg_audio
+    json_schema:
+      type: string
+      ui:widget: file
+outputs_def:
+  - handle: ffmpeg_source
+    description: Output
+    json_schema:
+      contentMediaType: oomol/var
+      type:
+        - string
+        - number
+        - integer
+        - boolean
+        - object
+        - array
+        - "null"
+icon: https://api.iconify.design/skill-icons:typescript.svg?color=%23888888
+ui:
+  default_width: 350
+executor:
+  name: nodejs
+  options:
+    spawn: false
+    entry: main.ts

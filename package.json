@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "dependencies": {
+    "@types/fluent-ffmpeg": "^2.1.25",
+    "fluent-ffmpeg": "^2.1.3"
+  }
+}

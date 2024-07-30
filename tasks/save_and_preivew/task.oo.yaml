@@ -1,0 +1,41 @@
+inputs_def:
+  - handle: ffmpeg_source
+    description: Input
+    json_schema:
+      contentMediaType: oomol/var
+      type:
+        - string
+        - number
+        - integer
+        - boolean
+        - object
+        - array
+        - "null"
+      ui:widget: any
+    value: ""
+  - handle: file_address
+    json_schema:
+      type: string
+      ui:widget: dir
+  - handle: file_name
+    json_schema:
+      type: string
+  - handle: formate
+    json_schema:
+      type: string
+      enum:
+        - mp4
+        - mp3
+outputs_def:
+  - handle: file_adress
+    description: Output
+    json_schema:
+      type: string
+icon: https://api.iconify.design/skill-icons:typescript.svg?color=%23888888
+ui:
+  default_width: 350
+executor:
+  name: nodejs
+  options:
+    spawn: false
+    entry: main.ts

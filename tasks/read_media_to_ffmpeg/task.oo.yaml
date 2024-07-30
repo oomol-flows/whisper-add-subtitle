@@ -1,0 +1,21 @@
+inputs_def:
+  - handle: video_source
+    description: Input
+    json_schema:
+      type: string
+      ui:widget: file
+    value: ""
+outputs_def:
+  - handle: ffmpeg_source
+    description: Output
+    json_schema:
+      contentMediaType: oomol/var
+      type: string
+icon: https://api.iconify.design/skill-icons:typescript.svg?color=%23888888
+ui:
+  default_width: 350
+executor:
+  name: nodejs
+  options:
+    spawn: false
+    entry: main.ts
