@@ -3,15 +3,12 @@ inputs_def:
     description: Input
     json_schema:
       contentMediaType: oomol/var
-      type:
-        - string
-        - number
-        - integer
-        - boolean
-        - object
-        - array
-        - "null"
-      ui:widget: any
+      type: array
+      ui:widget: multiSelect
+      ui:options:
+        metaOptions:
+          - label: A
+            value: A
     value: ""
   - handle: file_address
     json_schema:

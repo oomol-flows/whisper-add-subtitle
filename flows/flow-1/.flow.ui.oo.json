@@ -1,0 +1,111 @@
+{
+  "nodes": [
+    {
+      "id": "read_media_to_ffmpeg#2",
+      "contentWidth": 350,
+      "position": {
+        "x": 403,
+        "y": 299
+      },
+      "width": 364,
+      "height": 92
+    },
+    {
+      "id": "audio_video_separation#1",
+      "contentWidth": 350,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 819,
+        "y": 312
+      },
+      "positionAbsolute": {
+        "x": 819,
+        "y": 312
+      },
+      "width": 364,
+      "height": 111
+    },
+    {
+      "id": "save_and_preivew#1",
+      "contentWidth": 350,
+      "selected": true,
+      "dragging": false,
+      "position": {
+        "x": 1313,
+        "y": 299
+      },
+      "width": 364,
+      "height": 176
+    },
+    {
+      "id": "save_and_preivew#2",
+      "contentWidth": 350,
+      "position": {
+        "x": 1209,
+        "y": 702
+      },
+      "width": 364,
+      "height": 176
+    }
+  ],
+  "edges": [
+    {
+      "id": "4ef85df4-8386-4eb9-bfea-0236a8edc218",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "read_media_to_ffmpeg#2",
+            "output_handle": "ffmpeg_source"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "audio_video_separation#1",
+            "input_handle": "ffmpeg_source"
+          }
+        }
+      }
+    },
+    {
+      "id": "c9b17c51-e5d4-464d-b02b-82ac1f6200fa",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "audio_video_separation#1",
+            "output_handle": "ffmpeg_only_video"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "save_and_preivew#1",
+            "input_handle": "ffmpeg_source"
+          }
+        }
+      }
+    },
+    {
+      "id": "b17c51e5-d456-4d30-ab82-ac1f6200fa76",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "audio_video_separation#1",
+            "output_handle": "ffmpeg_only_audio"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "save_and_preivew#2",
+            "input_handle": "ffmpeg_source"
+          }
+        }
+      }
+    }
+  ]
+}

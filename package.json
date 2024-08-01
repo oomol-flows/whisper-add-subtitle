@@ -2,6 +2,7 @@
   "private": true,
   "dependencies": {
     "@types/fluent-ffmpeg": "^2.1.25",
+    "alibabacloud-nls": "^1.0.4",
     "fluent-ffmpeg": "^2.1.3"
   }
 }
