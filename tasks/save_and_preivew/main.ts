@@ -26,7 +26,7 @@ export default async function(inputs: Inputs, context: Context): Promise<Outputs
       console.error('Error during conversion:', err);
   } finally {
     console.log(save_address);
-    context.sendMessage({type: inputs.formate === "mp4" ? "video" : "audio", data: save_address})
+    context.preview({type: inputs.formate === "mp4" ? "video" : "audio", data: save_address})
     return { file_adress: save_address };
   }
 };

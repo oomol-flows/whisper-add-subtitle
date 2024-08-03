@@ -3,9 +3,15 @@
     {
       "id": "read_media_to_ffmpeg#2",
       "contentWidth": 350,
+      "selected": false,
+      "dragging": false,
       "position": {
-        "x": 403,
-        "y": 299
+        "x": 413,
+        "y": 312
+      },
+      "positionAbsolute": {
+        "x": 413,
+        "y": 315
       },
       "width": 364,
       "height": 92
@@ -29,7 +35,7 @@
     {
       "id": "save_and_preivew#1",
       "contentWidth": 350,
-      "selected": true,
+      "selected": false,
       "dragging": false,
       "position": {
         "x": 1313,
@@ -41,9 +47,15 @@
     {
       "id": "save_and_preivew#2",
       "contentWidth": 350,
+      "selected": true,
+      "dragging": false,
       "position": {
-        "x": 1209,
-        "y": 702
+        "x": 1313,
+        "y": 653
+      },
+      "positionAbsolute": {
+        "x": 1312,
+        "y": 653
       },
       "width": 364,
       "height": 176
