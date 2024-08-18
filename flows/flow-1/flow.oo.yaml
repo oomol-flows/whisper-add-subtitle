@@ -3,7 +3,10 @@ nodes:
     node_id: read_media_to_ffmpeg#2
     inputs_from:
       - handle: video_source
-        value: /oomol-storage/video/raw.mp4
+        value: ""
+        from_node:
+          - node_id: download_online_url#1
+            output_handle: file_address
   - task: self::audio_video_separation
     node_id: audio_video_separation#1
     inputs_from:
@@ -19,9 +22,9 @@ nodes:
           - node_id: audio_video_separation#1
             output_handle: ffmpeg_only_video
       - handle: file_address
-        value: /oomol-storage/video
+        value: /oomol-storage
       - handle: file_name
-        value: kkk1
+        value: oomol_local_v
       - handle: formate
         value: mp4
   - task: self::save_and_preivew
@@ -32,8 +35,20 @@ nodes:
           - node_id: audio_video_separation#1
             output_handle: ffmpeg_only_audio
       - handle: file_address
-        value: /oomol-storage/audio
+        value: /oomol-storage
       - handle: file_name
-        value: sss1
+        value: oomol_local_a
       - handle: formate
         value: mp3
+  - task: self::download_online_url
+    node_id: download_online_url#1
+    inputs_from:
+      - handle: in
+        value: ""
+      - handle: online_url
+        value: "https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/1723956987_oomol_test.\
+          mp4"
+      - handle: name
+        value: "oomol_local.mp4"
+      - handle: local_folder
+        value: "/oomol-storage"
