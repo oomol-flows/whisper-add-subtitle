@@ -13,8 +13,8 @@
         "x": 413,
         "y": 315
       },
-      "width": 364,
-      "height": 92
+      "width": 362,
+      "height": 96
     },
     {
       "id": "audio_video_separation#1",
@@ -29,8 +29,8 @@
         "x": 819,
         "y": 312
       },
-      "width": 364,
-      "height": 111
+      "width": 362,
+      "height": 119
     },
     {
       "id": "save_and_preivew#1",
@@ -41,13 +41,13 @@
         "x": 1313,
         "y": 299
       },
-      "width": 364,
-      "height": 176
+      "width": 362,
+      "height": 180
     },
     {
       "id": "save_and_preivew#2",
       "contentWidth": 350,
-      "selected": true,
+      "selected": false,
       "dragging": false,
       "position": {
         "x": 1313,
@@ -57,11 +57,44 @@
         "x": 1312,
         "y": 653
       },
-      "width": 364,
-      "height": 176
+      "width": 362,
+      "height": 180
+    },
+    {
+      "id": "download_online_url#1",
+      "contentWidth": 530,
+      "position": {
+        "x": -228.33369219330996,
+        "y": 385.05895451053254
+      },
+      "width": 542,
+      "height": 152
     }
   ],
   "edges": [
+    {
+      "id": "c8344755-a875-4cfb-b904-00d7cd95c72b",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "download_online_url#1",
+            "output_handle": "file_address"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "read_media_to_ffmpeg#2",
+            "input_handle": "video_source"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    },
     {
       "id": "4ef85df4-8386-4eb9-bfea-0236a8edc218",
       "connection": {
@@ -79,7 +112,11 @@
             "input_handle": "ffmpeg_source"
           }
         }
-      }
+      },
+      "gradientColor": [
+        "var(--edge-nodejs)",
+        "var(--edge-nodejs)"
+      ]
     },
     {
       "id": "c9b17c51-e5d4-464d-b02b-82ac1f6200fa",
@@ -98,7 +135,11 @@
             "input_handle": "ffmpeg_source"
           }
         }
-      }
+      },
+      "gradientColor": [
+        "var(--edge-nodejs)",
+        "var(--edge-nodejs)"
+      ]
     },
     {
       "id": "b17c51e5-d456-4d30-ab82-ac1f6200fa76",
@@ -117,7 +158,11 @@
             "input_handle": "ffmpeg_source"
           }
         }
-      }
+      },
+      "gradientColor": [
+        "var(--edge-nodejs)",
+        "var(--edge-nodejs)"
+      ]
     }
   ]
 }

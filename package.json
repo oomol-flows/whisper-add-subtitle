@@ -1,8 +1,10 @@
 {
   "private": true,
   "dependencies": {
+    "@types/download": "^8.0.5",
     "@types/fluent-ffmpeg": "^2.1.25",
     "alibabacloud-nls": "^1.0.4",
+    "download": "^8.0.0",
     "fluent-ffmpeg": "^2.1.3"
   }
 }
