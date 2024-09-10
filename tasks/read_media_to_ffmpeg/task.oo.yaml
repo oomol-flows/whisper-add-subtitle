@@ -11,7 +11,7 @@ outputs_def:
     json_schema:
       contentMediaType: oomol/var
       type: string
-icon: https://api.iconify.design/skill-icons:typescript.svg?color=%23888888
+icon: ":fa6-solid:file-import:currentColor:"
 ui:
   default_width: 350
 executor:

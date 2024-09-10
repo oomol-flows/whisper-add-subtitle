@@ -37,7 +37,7 @@ outputs_def:
         - array
         - "null"
       ui:widget: any
-icon: https://api.iconify.design/skill-icons:typescript.svg?color=%23888888
+icon: ":fa6-solid:code-branch:currentColor:"
 ui:
   default_width: 350
 executor:

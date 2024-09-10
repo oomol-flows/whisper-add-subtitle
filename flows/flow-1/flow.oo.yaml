@@ -5,8 +5,8 @@ nodes:
       - handle: video_source
         value: ""
         from_node:
-          - node_id: download_online_url#1
-            output_handle: file_address
+          - node_id: download_file#1
+            output_handle: file_path
   - task: self::audio_video_separation
     node_id: audio_video_separation#1
     inputs_from:
@@ -40,15 +40,13 @@ nodes:
         value: oomol_local_a
       - handle: formate
         value: mp3
-  - task: self::download_online_url
-    node_id: download_online_url#1
+  - task: tools::download_file
+    title: "Download File #1"
+    node_id: download_file#1
     inputs_from:
-      - handle: in
-        value: ""
-      - handle: online_url
-        value: "https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/1723956987_oomol_test.\
-          mp4"
-      - handle: name
-        value: "oomol_local.mp4"
-      - handle: local_folder
-        value: "/oomol-storage"
+      - handle: file_name
+        value: oomol_local.mp4
+      - handle: folder
+        value: /oomol-storage
+      - handle: url
+        value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/1723956987_oomol_test.mp4
