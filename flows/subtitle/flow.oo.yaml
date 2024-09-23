@@ -1,0 +1,209 @@
+nodes:
+  - task: self::read_media_to_ffmpeg
+    node_id: read_media_to_ffmpeg#1
+    inputs_from:
+      - handle: video_source
+        value: /oomol-storage/video/raw.mp4
+  - task: self::audio_video_separation
+    node_id: audio_video_separation#1
+    inputs_from:
+      - handle: ffmpeg_source
+        from_node:
+          - node_id: read_media_to_ffmpeg#1
+            output_handle: ffmpeg_source
+  - task: self::save_and_preivew
+    node_id: save_and_preivew#1
+    inputs_from:
+      - handle: ffmpeg_source
+        value: ""
+        from_node:
+          - node_id: audio_video_separation#1
+            output_handle: ffmpeg_only_audio
+      - handle: file_address
+        value: /oomol-storage/audio
+      - handle: file_name
+        value: raw.mp3
+      - handle: formate
+        value: mp3
+  - task:
+      ui:
+        default_width: 530
+      icon: ":logos:python:"
+      inputs_def:
+        - handle: audio_file
+          description: Input
+          json_schema:
+            type: string
+          value: input value
+        - handle: mode
+          json_schema:
+            type: string
+            enum:
+              - tiny
+              - base
+              - small
+              - medium
+              - large
+        - handle: prompt
+          json_schema:
+            type: string
+            ui:widget: text
+      outputs_def:
+        - handle: language
+          description: Output
+          json_schema:
+            type: string
+        - handle: text
+          json_schema:
+            type: string
+        - handle: segments
+          json_schema:
+            type: array
+            items:
+              type: object
+              properties:
+                field0:
+                  type: string
+      executor:
+        name: python
+        options:
+          entry: scriptlets/+python#1.py
+    title: "Python #1"
+    node_id: +python#1
+    inputs_from:
+      - handle: audio_file
+        value: input value
+        from_node:
+          - node_id: save_and_preivew#1
+            output_handle: file_adress
+      - handle: mode
+        value: small
+      - handle: prompt
+        value: "null"
+  - task:
+      ui:
+        default_width: 530
+      icon: ":logos:python:"
+      inputs_def:
+        - handle: segments
+          description: Input
+          json_schema:
+            type: array
+            items:
+              type: object
+              properties:
+                field0:
+                  type: string
+          value: input value
+      outputs_def:
+        - handle: srt_content
+          description: Output
+          json_schema:
+            type: string
+      executor:
+        name: python
+        options:
+          entry: scriptlets/+python#2.py
+    title: "Python #2"
+    node_id: +python#2
+    inputs_from:
+      - handle: segments
+        value:
+          []
+        from_node:
+          - node_id: +python#1
+            output_handle: segments
+  - task: transform::string_encoder
+    title: "Encode String #1"
+    node_id: string_encoder#1
+    inputs_from:
+      - handle: encode
+        value: utf8
+      - handle: string
+        from_node:
+          - node_id: +python#2
+            output_handle: srt_content
+  - task:
+      ui:
+        default_width: 530
+      icon: ":skill-icons:typescript:"
+      inputs_def:
+        - handle: file_address
+          description: Input
+          json_schema:
+            type: string
+          value: input value
+        - handle: srt_address
+          json_schema:
+            type: string
+        - handle: folder_address
+          json_schema:
+            type: string
+            ui:widget: dir
+        - handle: name
+          json_schema:
+            type: string
+      outputs_def:
+        - handle: output_address
+          description: Output
+          json_schema:
+            type: string
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+typescript#1.ts
+    title: "TypeScript #1"
+    node_id: +typescript#1
+    inputs_from:
+      - handle: file_address
+        value: input value
+        from_node:
+          - node_id: read_media_to_ffmpeg#1
+            output_handle: file_address
+      - handle: srt_address
+        value: input value
+        from_node:
+          - node_id: +typescript#2
+            output_handle: srt_address
+      - handle: folder_address
+        value: /oomol-storage/video
+      - handle: name
+        value: new_video
+  - task:
+      ui:
+        default_width: 530
+      icon: ":skill-icons:typescript:"
+      inputs_def:
+        - handle: binary
+          description: Input
+          json_schema:
+            type: string
+          value: input value
+        - handle: file_name
+          json_schema:
+            type: string
+        - handle: output_folder
+          json_schema:
+            type: string
+            ui:widget: dir
+      outputs_def:
+        - handle: srt_address
+          description: Output
+          json_schema:
+            type: string
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+typescript#2.ts
+    title: "TypeScript #2"
+    node_id: +typescript#2
+    inputs_from:
+      - handle: binary
+        value: input value
+        from_node:
+          - node_id: string_encoder#1
+            output_handle: binary
+      - handle: file_name
+        value: record99
+      - handle: output_folder
+        value: /oomol-storage/srt

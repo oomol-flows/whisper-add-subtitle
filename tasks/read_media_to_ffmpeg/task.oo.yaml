@@ -11,6 +11,9 @@ outputs_def:
     json_schema:
       contentMediaType: oomol/var
       type: string
+  - handle: file_address
+    json_schema:
+      type: string
 icon: ":fa6-solid:file-import:currentColor:"
 ui:
   default_width: 350

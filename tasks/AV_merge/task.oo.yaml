@@ -35,7 +35,7 @@ outputs_def:
         - "null"
 icon: ":fa6-solid:code-pull-request:currentColor:"
 ui:
-  default_width: 350
+  default_width: 419
 executor:
   name: nodejs
   options:

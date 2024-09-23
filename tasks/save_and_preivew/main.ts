@@ -1,4 +1,4 @@
-import type { Context } from "@oomol/oocana-types";
+import type { Context } from "@oomol/types/oocana";
 import ffmpeg, {FfmpegCommand} from "fluent-ffmpeg";
 
 type Inputs = Readonly<{ 

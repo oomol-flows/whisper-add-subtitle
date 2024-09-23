@@ -1,0 +1,314 @@
+{
+  "nodes": [
+    {
+      "id": "read_media_to_ffmpeg#1",
+      "contentWidth": 350,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 0,
+        "y": 45
+      },
+      "positionAbsolute": {
+        "x": -36.5,
+        "y": 200.5
+      },
+      "width": 434,
+      "height": 269
+    },
+    {
+      "id": "audio_video_separation#1",
+      "contentWidth": 350,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 484,
+        "y": 30
+      },
+      "positionAbsolute": {
+        "x": 470,
+        "y": 367
+      },
+      "width": 434,
+      "height": 269
+    },
+    {
+      "id": "save_and_preivew#1",
+      "contentWidth": 350,
+      "selected": false,
+      "position": {
+        "x": 968,
+        "y": 0
+      },
+      "width": 434,
+      "height": 329
+    },
+    {
+      "id": "+python#1",
+      "contentWidth": 530,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 1466.917671009772,
+        "y": -129.3250814332247
+      },
+      "positionAbsolute": {
+        "x": 1466.917671009772,
+        "y": -129.3250814332247
+      },
+      "width": 544,
+      "height": 1042
+    },
+    {
+      "id": "+python#2",
+      "contentWidth": 530,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 2098.4616562562032,
+        "y": -129.3250814332247
+      },
+      "positionAbsolute": {
+        "x": 2098.4616562562032,
+        "y": -134.09033035607473
+      },
+      "width": 544,
+      "height": 838
+    },
+    {
+      "id": "string_encoder#1",
+      "contentWidth": 200,
+      "selected": true,
+      "dragging": false,
+      "position": {
+        "x": 2753.29844647835,
+        "y": 452.65390226746126
+      },
+      "positionAbsolute": {
+        "x": 2753.29844647835,
+        "y": 452.65390226746126
+      },
+      "width": 434,
+      "height": 269
+    },
+    {
+      "id": "+typescript#1",
+      "contentWidth": 747.6235342019545,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 3893.2080429080015,
+        "y": -42.717411618295756
+      },
+      "positionAbsolute": {
+        "x": 3893.2080429080015,
+        "y": -42.717411618295756
+      },
+      "width": 762,
+      "height": 982
+    },
+    {
+      "id": "+typescript#2",
+      "contentWidth": 530,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 3231.5167298654874,
+        "y": 196.86607664754672
+      },
+      "positionAbsolute": {
+        "x": 3231.5167298654874,
+        "y": 196.86607664754672
+      },
+      "width": 544,
+      "height": 694
+    }
+  ],
+  "edges": [
+    {
+      "id": "fb773c6d-a2a4-4399-858b-51848a9a6f5c",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "read_media_to_ffmpeg#1",
+            "output_handle": "ffmpeg_source"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "audio_video_separation#1",
+            "input_handle": "ffmpeg_source"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-nodejs)",
+        "var(--edge-nodejs)"
+      ]
+    },
+    {
+      "id": "773c6da2-a433-4905-8b51-848a9a6f5c52",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "audio_video_separation#1",
+            "output_handle": "ffmpeg_only_audio"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "save_and_preivew#1",
+            "input_handle": "ffmpeg_source"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-nodejs)",
+        "var(--edge-nodejs)"
+      ]
+    },
+    {
+      "id": "3c6da2a4-3399-458b-9184-8a9a6f5c522c",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "save_and_preivew#1",
+            "output_handle": "file_adress"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "+python#1",
+            "input_handle": "audio_file"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    },
+    {
+      "id": "01ad5afb-389d-489d-8675-8988613f66f2",
+      "selected": false,
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "+python#1",
+            "output_handle": "segments"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "+python#2",
+            "input_handle": "segments"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    },
+    {
+      "id": "06b54b27-3d1d-4620-b9d0-117194aa7a03",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "+python#2",
+            "output_handle": "srt_content"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "string_encoder#1",
+            "input_handle": "string"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    },
+    {
+      "id": "b54b273d-1d26-4079-9011-7194aa7a0352",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "read_media_to_ffmpeg#1",
+            "output_handle": "file_address"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "+typescript#1",
+            "input_handle": "file_address"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    },
+    {
+      "id": "4b273d1d-2620-49d0-9171-94aa7a03520e",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "+typescript#2",
+            "output_handle": "srt_address"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "+typescript#1",
+            "input_handle": "srt_address"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    },
+    {
+      "id": "273d1d26-2079-4011-b194-aa7a03520e82",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "string_encoder#1",
+            "output_handle": "binary"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "+typescript#2",
+            "input_handle": "binary"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    }
+  ]
+}
