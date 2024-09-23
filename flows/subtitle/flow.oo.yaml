@@ -3,7 +3,7 @@ nodes:
     node_id: read_media_to_ffmpeg#1
     inputs_from:
       - handle: video_source
-        value: /oomol-storage/video/raw.mp4
+        value: /oomol-storage/video/mp.mp4
   - task: self::audio_video_separation
     node_id: audio_video_separation#1
     inputs_from:
@@ -22,7 +22,7 @@ nodes:
       - handle: file_address
         value: /oomol-storage/audio
       - handle: file_name
-        value: raw.mp3
+        value: raw
       - handle: formate
         value: mp3
   - task:
@@ -68,7 +68,7 @@ nodes:
         name: python
         options:
           entry: scriptlets/+python#1.py
-    title: "Python #1"
+    title: "Whisper"
     node_id: +python#1
     inputs_from:
       - handle: audio_file
@@ -104,7 +104,7 @@ nodes:
         name: python
         options:
           entry: scriptlets/+python#2.py
-    title: "Python #2"
+    title: "srt_content"
     node_id: +python#2
     inputs_from:
       - handle: segments
@@ -152,7 +152,7 @@ nodes:
         name: nodejs
         options:
           entry: scriptlets/+typescript#1.ts
-    title: "TypeScript #1"
+    title: "save_video"
     node_id: +typescript#1
     inputs_from:
       - handle: file_address
@@ -195,7 +195,7 @@ nodes:
         name: nodejs
         options:
           entry: scriptlets/+typescript#2.ts
-    title: "TypeScript #2"
+    title: "save_srt"
     node_id: +typescript#2
     inputs_from:
       - handle: binary

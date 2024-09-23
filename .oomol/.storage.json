@@ -4,18 +4,11 @@
     "sessionViewMode": "current"
   },
   "sharedBlockExplorerInit": false,
-  "designer/flow/flow-1": {
-    "viewport": {
-      "x": 290.22512077692255,
-      "y": 88.16846836412498,
-      "zoom": 0.5396404104894363
-    }
-  },
   "designer/flow/subtitle": {
     "viewport": {
-      "x": 196.2938469905856,
-      "y": 271.87086862211686,
-      "zoom": 0.2987619409703255
+      "x": 49.090909090909065,
+      "y": 132.6444805194805,
+      "zoom": 0.21915584415584416
     }
   }
 }

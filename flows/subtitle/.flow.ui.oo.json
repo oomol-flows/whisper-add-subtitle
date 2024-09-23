@@ -7,7 +7,7 @@
       "dragging": false,
       "position": {
         "x": 0,
-        "y": 45
+        "y": 356.5
       },
       "positionAbsolute": {
         "x": -36.5,
@@ -23,11 +23,11 @@
       "dragging": false,
       "position": {
         "x": 484,
-        "y": 30
+        "y": 634.5
       },
       "positionAbsolute": {
-        "x": 470,
-        "y": 367
+        "x": 482.13694020864,
+        "y": -73.2036331348675
       },
       "width": 434,
       "height": 269
@@ -36,9 +36,10 @@
       "id": "save_and_preivew#1",
       "contentWidth": 350,
       "selected": false,
+      "dragging": false,
       "position": {
         "x": 968,
-        "y": 0
+        "y": 604.5
       },
       "width": 434,
       "height": 329
@@ -49,8 +50,8 @@
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 1466.917671009772,
-        "y": -129.3250814332247
+        "x": 1452,
+        "y": 248
       },
       "positionAbsolute": {
         "x": 1466.917671009772,
@@ -62,27 +63,30 @@
     {
       "id": "+python#2",
       "contentWidth": 530,
-      "selected": false,
+      "cardCollapse": {
+        "scriptlet": true
+      },
+      "selected": true,
       "dragging": false,
       "position": {
-        "x": 2098.4616562562032,
-        "y": -129.3250814332247
+        "x": 2046,
+        "y": 613
       },
       "positionAbsolute": {
         "x": 2098.4616562562032,
         "y": -134.09033035607473
       },
       "width": 544,
-      "height": 838
+      "height": 312
     },
     {
       "id": "string_encoder#1",
       "contentWidth": 200,
-      "selected": true,
+      "selected": false,
       "dragging": false,
       "position": {
-        "x": 2753.29844647835,
-        "y": 452.65390226746126
+        "x": 2640,
+        "y": 634.5
       },
       "positionAbsolute": {
         "x": 2753.29844647835,
@@ -97,8 +101,8 @@
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 3893.2080429080015,
-        "y": -42.717411618295756
+        "x": 3718,
+        "y": 0
       },
       "positionAbsolute": {
         "x": 3893.2080429080015,
@@ -113,8 +117,8 @@
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 3231.5167298654874,
-        "y": 196.86607664754672
+        "x": 3124,
+        "y": 422
       },
       "positionAbsolute": {
         "x": 3231.5167298654874,
@@ -173,6 +177,7 @@
     },
     {
       "id": "3c6da2a4-3399-458b-9184-8a9a6f5c522c",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
