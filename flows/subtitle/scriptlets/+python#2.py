@@ -10,7 +10,8 @@ def main(inputs: dict, context: Context):
 
     lines.append(f"{index + 1}")
     lines.append(f"{to_timestamp(begin)} --> {to_timestamp(end)}")
-    lines.append(f"{text.replace("\n", " ")}\n")
+    text2 = text.replace("\n", " ")
+    lines.append(f"{text2}\n")
 
   return { "srt_content": "\n".join(lines) }
 
