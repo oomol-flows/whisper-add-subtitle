@@ -15,10 +15,18 @@ export default async function(inputs: Inputs, context: Context<Inputs, Outputs>)
   try {
     await new Promise((resolve, reject) => {
       ffmpeg(inputs.file_address)
-        .input(inputs.srt_address)
-        .outputOptions([
-            '-vf', 'subtitles=' + inputs.srt_address,
-        ])
+       .inputOption([
+          "-vsync 0",
+          "-hwaccel cuvid",
+          "-hwaccel_output_format cuvid",
+          "-c:v h264_cuvid"
+        ])
+        .inputFormat("mp4")
+        .audioCodec("copy") // 音频流直接复制
+        .videoCodec("h264_nvenc") // 编码使用nvenc
+        .outputOptions([
+            '-vf', 'subtitles=' + inputs.srt_address,
+        ])
         .on('end', function() {
           resolve("ok");
           console.log('视频处理完成');
