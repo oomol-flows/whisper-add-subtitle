@@ -5,6 +5,9 @@ container:
     bootstrap: |
       pnpm install 
       pip install -r requirements.txt
-      apt-get update
-      apt-get install ffmpeg -y
+      wget -P /root https://static.oomol.com/containers-resource/ffmpeg.tar.xz
+      tar -xf /root/ffmpeg.tar.xz
+      ls /root/ffmpeg_bin
+      mv /root/ffmpeg_bin/ffmpeg /bin
+      mv /root/ffmpeg_bin/ffprobe /bin
 icon: ./icon.png
