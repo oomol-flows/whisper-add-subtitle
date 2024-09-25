@@ -47,7 +47,7 @@
     {
       "id": "+python#1",
       "contentWidth": 530,
-      "selected": false,
+      "selected": true,
       "dragging": false,
       "position": {
         "x": 1452,
@@ -66,7 +66,7 @@
       "cardCollapse": {
         "scriptlet": true
       },
-      "selected": true,
+      "selected": false,
       "dragging": false,
       "position": {
         "x": 2046,
@@ -77,11 +77,11 @@
         "y": -134.09033035607473
       },
       "width": 544,
-      "height": 312
+      "height": 282
     },
     {
       "id": "string_encoder#1",
-      "contentWidth": 200,
+      "contentWidth": 557.0053913625093,
       "selected": false,
       "dragging": false,
       "position": {
@@ -92,45 +92,50 @@
         "x": 2753.29844647835,
         "y": 452.65390226746126
       },
-      "width": 434,
+      "width": 571,
       "height": 269
     },
     {
+      "scriptletHeight": 357.95187315041613,
       "id": "+typescript#1",
-      "contentWidth": 747.6235342019545,
+      "contentWidth": 452.2264045819369,
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 3718,
-        "y": 0
+        "x": 3980.770386659333,
+        "y": 87.46781708801143
       },
       "positionAbsolute": {
-        "x": 3893.2080429080015,
-        "y": -42.717411618295756
+        "x": 3980.770386659333,
+        "y": 87.46781708801143
       },
-      "width": 762,
-      "height": 982
+      "width": 466,
+      "height": 740
     },
     {
       "id": "+typescript#2",
-      "contentWidth": 530,
+      "contentWidth": 595.0112611428895,
+      "cardCollapse": {
+        "scriptlet": true
+      },
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 3124,
-        "y": 422
+        "x": 3251.656547380049,
+        "y": 613
       },
       "positionAbsolute": {
-        "x": 3231.5167298654874,
-        "y": 196.86607664754672
+        "x": 3251.656547380049,
+        "y": 612.1267726936891
       },
-      "width": 544,
-      "height": 694
+      "width": 609,
+      "height": 342
     }
   ],
   "edges": [
     {
       "id": "fb773c6d-a2a4-4399-858b-51848a9a6f5c",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
@@ -154,6 +159,7 @@
     },
     {
       "id": "773c6da2-a433-4905-8b51-848a9a6f5c52",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
@@ -225,6 +231,7 @@
     },
     {
       "id": "06b54b27-3d1d-4620-b9d0-117194aa7a03",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
@@ -248,6 +255,7 @@
     },
     {
       "id": "b54b273d-1d26-4079-9011-7194aa7a0352",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
@@ -271,6 +279,7 @@
     },
     {
       "id": "4b273d1d-2620-49d0-9171-94aa7a03520e",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
@@ -294,6 +303,7 @@
     },
     {
       "id": "273d1d26-2079-4011-b194-aa7a03520e82",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",

@@ -1,5 +1,5 @@
 import type { Context } from "@oomol/types/oocana";
-import ffmpeg, {FfmpegCommand} from "fluent-ffmpeg";
+import ffmpeg from "fluent-ffmpeg";
 
 type Inputs = Readonly<{
   name: string,
@@ -18,8 +18,6 @@ export default async function(inputs: Inputs, context: Context<Inputs, Outputs>)
         .input(inputs.srt_address)
         .outputOptions([
             '-vf', 'subtitles=' + inputs.srt_address,
-            // 可选的：调整字幕显示位置
-            // '-vf', 'subtitles=' + subtitlesPath + ':force_style=\'FontName=Arial,Fontsize=20,PrimaryColour=&H00FFFF&\''
         ])
         .on('end', function() {
           resolve("ok");

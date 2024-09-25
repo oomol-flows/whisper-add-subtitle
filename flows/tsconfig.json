@@ -4,7 +4,6 @@
     "strict": true,
     "target": "ESNext",
     "module": "Preserve",
-    "types": [],
     "skipLibCheck": true,
     "noEmit": true,
     "noImplicitAny": false,
