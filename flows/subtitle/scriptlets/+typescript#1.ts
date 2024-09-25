@@ -1,12 +1,12 @@
 import type { Context } from "@oomol/types/oocana";
-import ffmpeg from "fluent-ffmpeg";
+import {  FfmpegCommand } from "fluent-ffmpeg";
 
 type Inputs = Readonly<{
-  name: string;
-  file_address: string;
-  srt_address: string;
-  folder_address: string;
-}>;
+  name: string,
+  origin_source: FfmpegCommand,
+  srt_address: string,
+  folder_address: string,
+ }>;
 type Outputs = Readonly<{ output_address: string }>;
 
 export default async function (
@@ -16,18 +16,11 @@ export default async function (
   const save_address = `${inputs.folder_address}/${inputs.name}.mp4`;
   try {
     await new Promise((resolve, reject) => {
-      ffmpeg(inputs.file_address)
-        .inputOption([
-          "-vsync 0",
-          "-hwaccel cuvid",
-          "-hwaccel_output_format cuvid",
-          "-c:v h264_cuvid",
-        ])
-        .inputFormat("mp4")
-        .audioCodec("copy") // 音频流直接复制
-        .videoCodec("h264_nvenc") // 编码使用nvenc
-        .outputOptions(["-vf", "subtitles=" + inputs.srt_address])
-        .on("end", function () {
+      inputs.origin_source
+      .outputOptions([
+        '-vf', 'subtitles=' + inputs.srt_address,
+       ])
+        .on('end', function() {
           resolve("ok");
           console.log("视频处理完成");
         })

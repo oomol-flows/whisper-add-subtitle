@@ -1,0 +1,12 @@
+executor:
+  name: nodejs
+  options:
+    entry: index.ts
+inputs_def:
+  - handle: ffmepg_source
+    json_schema:
+      contentMediaType: oomol/var
+outputs_def:
+  - handle: ffmepg_source
+    json_schema:
+      contentMediaType: oomol/var

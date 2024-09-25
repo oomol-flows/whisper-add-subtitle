@@ -6,9 +6,10 @@
   "sharedBlockExplorerInit": false,
   "designer/flow/subtitle": {
     "viewport": {
-      "x": -3189.3948682803457,
-      "y": -185.5673804602725,
-      "zoom": 1.0776189568195491
+      "x": -4218.612466910999,
+      "y": -129.48358713156074,
+      "zoom": 1.1212121212121218
     }
-  }
+  },
+  "defaultSharedBlockTemplate": "typescript"
 }

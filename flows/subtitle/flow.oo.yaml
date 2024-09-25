@@ -3,7 +3,7 @@ nodes:
     node_id: read_media_to_ffmpeg#1
     inputs_from:
       - handle: video_source
-        value: /oomol-storage/video/mp.mp4
+        value: /oomol-storage/oomol_local.mp4
   - task: self::audio_video_separation
     node_id: audio_video_separation#1
     inputs_from:
@@ -128,10 +128,10 @@ nodes:
         default_width: 530
       icon: ":skill-icons:typescript:"
       inputs_def:
-        - handle: file_address
+        - handle: origin_source
           description: Input
           json_schema:
-            type: string
+            contentMediaType: oomol/var
           value: input value
         - handle: srt_address
           json_schema:
@@ -155,11 +155,6 @@ nodes:
     title: "save_video"
     node_id: +typescript#1
     inputs_from:
-      - handle: file_address
-        value: input value
-        from_node:
-          - node_id: read_media_to_ffmpeg#1
-            output_handle: file_address
       - handle: srt_address
         value: input value
         from_node:
@@ -169,6 +164,10 @@ nodes:
         value: /oomol-storage/video
       - handle: name
         value: new_video
+      - handle: origin_source
+        from_node:
+          - node_id: nvidia_turbo#1
+            output_handle: ffmepg_source
   - task:
       ui:
         default_width: 530
@@ -207,3 +206,18 @@ nodes:
         value: record99
       - handle: output_folder
         value: /oomol-storage/srt
+  - task: self::nvidia_turbo
+    node_id: nvidia_turbo#1
+    inputs_from:
+      - handle: ffmepg_source
+        from_node:
+          - node_id: read_media_to_ffmpeg#2
+            output_handle: ffmpeg_source
+  - task: self::read_media_to_ffmpeg
+    node_id: read_media_to_ffmpeg#2
+    inputs_from:
+      - handle: video_source
+        value: ""
+        from_node:
+          - node_id: read_media_to_ffmpeg#1
+            output_handle: file_address
