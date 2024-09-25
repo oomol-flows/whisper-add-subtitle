@@ -3,5 +3,10 @@ container:
     # Script executed when the container is first loaded
     # eg: bootstrap: pip install pandas
     bootstrap: |
-      pnpm install && pip install --user -r requirements.txt && sudo apt-get update && sudo apt-get install ffmpeg -y
+      pnpm install 
+      pip install -r requirements.txt
+      wget -P /root https://static.oomol.com/containers-resource/ffmpeg.tar.xz
+      tar -xf /root/ffmpeg.tar.xz
+      mv /root/ffmpeg_bin/ffmpeg /bin
+      mv /root/ffmpeg_bin/ffprobe /bin
 icon: ./icon.png
