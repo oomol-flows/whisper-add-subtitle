@@ -10,4 +10,4 @@ container:
       ls /root/ffmpeg_bin
       mv /root/ffmpeg_bin/ffmpeg /bin
       mv /root/ffmpeg_bin/ffprobe /bin
-icon: ./icon.png
+icon: https://raw.githubusercontent.com/oomol-flows/whisper-add-subtitle/main/icon.png
