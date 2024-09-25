@@ -6,7 +6,7 @@ container:
       pnpm install 
       pip install -r requirements.txt
       wget -P /root https://static.oomol.com/containers-resource/ffmpeg.tar.xz
-      tar -xf /root/ffmpeg.tar.xz
+      tar -xf /root/ffmpeg.tar.xz -C /root
       ls /root/ffmpeg_bin
       mv /root/ffmpeg_bin/ffmpeg /bin
       mv /root/ffmpeg_bin/ffprobe /bin
