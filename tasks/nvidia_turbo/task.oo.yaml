@@ -11,3 +11,5 @@ outputs_def:
     json_schema:
       contentMediaType: oomol/var
 icon: ":fa6-solid:fire:currentColor:"
+ui:
+  default_width: 549

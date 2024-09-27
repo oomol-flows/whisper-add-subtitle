@@ -10,7 +10,6 @@ outputs_def:
     description: Output
     json_schema:
       contentMediaType: oomol/var
-      type: string
   - handle: file_address
     json_schema:
       type: string
