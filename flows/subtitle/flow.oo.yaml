@@ -231,7 +231,7 @@ nodes:
       - handle: source_lan
         value: English
       - handle: target_lan
-        value: Chinese
+        value: Japanese
   - task:
       ui:
         default_width: 530
