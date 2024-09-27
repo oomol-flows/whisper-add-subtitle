@@ -10,3 +10,4 @@ outputs_def:
   - handle: ffmepg_source
     json_schema:
       contentMediaType: oomol/var
+icon: ":fa6-solid:fire:currentColor:"

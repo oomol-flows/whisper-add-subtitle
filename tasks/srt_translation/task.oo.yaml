@@ -5,6 +5,13 @@ inputs_def:
       type: string
       ui:widget: file
     value: /oomol-storage/srt/raw.srt
+  - handle: ai
+    json_schema:
+      type: string
+      enum:
+        - DeepSeek
+        - ChatGPT
+    value: DeepSeek
   - handle: ai_token
     json_schema:
       type: string
@@ -14,12 +21,28 @@ inputs_def:
     json_schema:
       type: integer
     value: 25
+  - handle: source_lan
+    json_schema:
+      type: string
+      enum:
+        - English
+        - Chinese
+        - Japanese
+    value: English
+  - handle: target_lan
+    json_schema:
+      type: string
+      enum:
+        - English
+        - Chinese
+        - Japanese
+    value: Japanese
 outputs_def:
   - handle: bin
     description: Output
     json_schema:
       type: string
-icon: ":logos:python:"
+icon: ":fa6-solid:closed-captioning:currentColor:"
 ui:
   default_width: 530
 executor:

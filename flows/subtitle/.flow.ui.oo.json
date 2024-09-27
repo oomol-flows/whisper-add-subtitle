@@ -7,7 +7,7 @@
       "dragging": false,
       "position": {
         "x": 0,
-        "y": 278
+        "y": 664.5
       },
       "positionAbsolute": {
         "x": -36.5,
@@ -23,7 +23,7 @@
       "dragging": false,
       "position": {
         "x": 484,
-        "y": 556
+        "y": 386.5
       },
       "positionAbsolute": {
         "x": 482.13694020864,
@@ -39,7 +39,7 @@
       "dragging": false,
       "position": {
         "x": 968,
-        "y": 526
+        "y": 356.5
       },
       "width": 434,
       "height": 329
@@ -51,7 +51,7 @@
       "dragging": false,
       "position": {
         "x": 1452,
-        "y": 169.5
+        "y": 0
       },
       "positionAbsolute": {
         "x": 1466.917671009772,
@@ -70,7 +70,7 @@
       "dragging": false,
       "position": {
         "x": 2046,
-        "y": 549.5
+        "y": 380
       },
       "positionAbsolute": {
         "x": 2098.4616562562032,
@@ -86,7 +86,7 @@
       "dragging": false,
       "position": {
         "x": 2640,
-        "y": 556
+        "y": 386.5
       },
       "positionAbsolute": {
         "x": 2753.29844647835,
@@ -99,15 +99,15 @@
       "scriptletHeight": 357.95187315041613,
       "id": "+typescript#1",
       "contentWidth": 515.1321791444384,
-      "selected": false,
+      "selected": true,
       "dragging": false,
       "position": {
-        "x": 4514,
-        "y": 42.5
+        "x": 5173,
+        "y": 429
       },
       "positionAbsolute": {
-        "x": 4620.716991969961,
-        "y": 106.2767986195266
+        "x": 5165.592095738859,
+        "y": 97.10268958705518
       },
       "width": 529,
       "height": 740
@@ -122,7 +122,7 @@
       "dragging": false,
       "position": {
         "x": 3261,
-        "y": 519.5
+        "y": 350
       },
       "positionAbsolute": {
         "x": 3251.656547380049,
@@ -137,8 +137,8 @@
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 3348.5,
-        "y": 0
+        "x": 3975,
+        "y": 942.5
       },
       "positionAbsolute": {
         "x": 2861.18308276398,
@@ -150,12 +150,47 @@
     {
       "id": "srt_translation#1",
       "contentWidth": 530,
+      "selected": false,
+      "dragging": false,
       "position": {
         "x": 3920,
-        "y": 541
+        "y": 326.5
+      },
+      "positionAbsolute": {
+        "x": 3613.006879866485,
+        "y": 1003.3170202010672
       },
       "width": 544,
-      "height": 299
+      "height": 389
+    },
+    {
+      "id": "+typescript#3",
+      "contentWidth": 595.0112611428895,
+      "cardCollapse": {
+        "scriptlet": true
+      },
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 4514,
+        "y": 350
+      },
+      "positionAbsolute": {
+        "x": 4366.424042089355,
+        "y": 887.1036493055502
+      },
+      "width": 609,
+      "height": 342
+    },
+    {
+      "id": "nvidia_turbo#1",
+      "contentWidth": 200,
+      "position": {
+        "x": 4601.5,
+        "y": 957.5
+      },
+      "width": 434,
+      "height": 239
     }
   ],
   "edges": [
@@ -281,6 +316,7 @@
     },
     {
       "id": "d7d692b1-d000-4f82-b409-7f6ab290a42f",
+      "selected": true,
       "connection": {
         "from": {
           "type": "from_node",
@@ -303,14 +339,14 @@
       ]
     },
     {
-      "id": "47c5ea13-1527-4177-abee-10dd46694a2f",
-      "selected": false,
+      "id": "78c1c84b-d838-4a86-a595-56515e989e08",
+      "selected": true,
       "connection": {
         "from": {
           "type": "from_node",
           "source": {
-            "node_id": "nvidia_turbo#1",
-            "output_handle": "ffmepg_source"
+            "node_id": "read_media_to_ffmpeg#2",
+            "output_handle": "ffmpeg_source"
           }
         },
         "to": {
@@ -351,31 +387,8 @@
       ]
     },
     {
-      "id": "c5ea1315-27b1-47eb-ae10-dd46694a2f9b",
-      "selected": false,
-      "connection": {
-        "from": {
-          "type": "from_node",
-          "source": {
-            "node_id": "read_media_to_ffmpeg#2",
-            "output_handle": "ffmpeg_source"
-          }
-        },
-        "to": {
-          "type": "to_node",
-          "target": {
-            "node_id": "nvidia_turbo#1",
-            "input_handle": "ffmepg_source"
-          }
-        }
-      },
-      "gradientColor": [
-        "var(--edge-nodejs)",
-        "var(--edge-nodejs)"
-      ]
-    },
-    {
       "id": "ea131527-b177-4bee-90dd-46694a2f9b48",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
@@ -399,6 +412,7 @@
     },
     {
       "id": "d692b1d0-008f-42b4-897f-6ab290a42f2e",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",

@@ -158,16 +158,16 @@ nodes:
       - handle: srt_address
         value: input value
         from_node:
-          - node_id: srt_translation#1
-            output_handle: bin
+          - node_id: +typescript#3
+            output_handle: srt_address
       - handle: folder_address
         value: /oomol-storage/video
       - handle: name
         value: new_video
       - handle: origin_source
         from_node:
-          - node_id: read_media_to_ffmpeg#2
-            output_handle: ffmpeg_source
+          - node_id: nvidia_turbo#1
+            output_handle: ffmepg_source
   - task:
       ui:
         default_width: 530
@@ -226,3 +226,54 @@ nodes:
         value: Custom,deepseek,token
       - handle: group_size
         value: 25
+      - handle: ai
+        value: DeepSeek
+      - handle: source_lan
+        value: English
+      - handle: target_lan
+        value: Chinese
+  - task:
+      ui:
+        default_width: 530
+      icon: ":skill-icons:typescript:"
+      inputs_def:
+        - handle: binary
+          description: Input
+          json_schema:
+            type: string
+          value: input value
+        - handle: file_name
+          json_schema:
+            type: string
+        - handle: output_folder
+          json_schema:
+            type: string
+            ui:widget: dir
+      outputs_def:
+        - handle: srt_address
+          description: Output
+          json_schema:
+            type: string
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+typescript#3.ts
+    title: "save_srt #2"
+    node_id: +typescript#3
+    inputs_from:
+      - handle: binary
+        value: input value
+        from_node:
+          - node_id: srt_translation#1
+            output_handle: bin
+      - handle: file_name
+        value: record99
+      - handle: output_folder
+        value: /oomol-storage/srt
+  - task: self::nvidia_turbo
+    node_id: nvidia_turbo#1
+    inputs_from:
+      - handle: ffmepg_source
+        from_node:
+          - node_id: read_media_to_ffmpeg#2
+            output_handle: ffmpeg_source

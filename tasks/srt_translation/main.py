@@ -7,6 +7,18 @@ from llm import AITranslator
 def main(inputs: dict, context: Context):
   timestamps: list[str] = []
   texts: list[str] = []
+  ai = inputs["ai"]
+  model: str
+  api_url: str
+  
+  if ai == "DeepSeek":
+    model = "deepseek-chat"
+    api_url = "https://api.deepseek.com/chat/completions"
+  elif ai == "ChatGPT":
+    model = "gpt-3.5-turbo"
+    api_url = "https://aigptx.top/v1/chat/completions"
+  else:
+    raise Exception(f"unknown AI: {ai}")
 
   with open(inputs["srt_file"], "r", encoding="utf-8") as file:
 
@@ -21,11 +33,11 @@ def main(inputs: dict, context: Context):
   
   group_size = inputs["group_size"]
   translater = AITranslator(
-    model="deepseek-chat",
-    api_url="https://api.deepseek.com/chat/completions",
+    model=model,
+    api_url=api_url,
     auth_token=inputs["ai_token"],
-    source_lan="English",
-    target_lan="Chinese",
+    source_lan=inputs["source_lan"],
+    target_lan=inputs["target_lan"],
   )
   target_texts: list[str] = []
 

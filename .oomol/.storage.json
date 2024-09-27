@@ -6,24 +6,10 @@
   "sharedBlockExplorerInit": false,
   "designer/flow/subtitle": {
     "viewport": {
-      "x": 305.44072330164363,
-      "y": 440.33536904871954,
-      "zoom": 0.2502220481792947
+      "x": -2109.215395483535,
+      "y": -121.6836503449565,
+      "zoom": 0.5820039271426369
     }
   },
-  "defaultSharedBlockTemplate": "typescript",
-  "designer/flow/test": {
-    "viewport": {
-      "x": 0,
-      "y": 78.5,
-      "zoom": 1
-    }
-  },
-  "designer/flow/666": {
-    "viewport": {
-      "x": 2.5,
-      "y": -9,
-      "zoom": 1
-    }
-  }
+  "defaultSharedBlockTemplate": "typescript"
 }
