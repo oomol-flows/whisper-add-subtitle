@@ -58,7 +58,7 @@
         "y": -129.3250814332247
       },
       "width": 544,
-      "height": 1042
+      "height": 442
     },
     {
       "id": "+python#2",
@@ -110,7 +110,7 @@
         "y": 97.10268958705518
       },
       "width": 529,
-      "height": 740
+      "height": 382
     },
     {
       "id": "+typescript#2",
@@ -315,14 +315,13 @@
       ]
     },
     {
-      "id": "d7d692b1-d000-4f82-b409-7f6ab290a42f",
-      "selected": true,
+      "id": "117c782e-cc78-4c0f-8852-8356d23f45e6",
       "connection": {
         "from": {
           "type": "from_node",
           "source": {
-            "node_id": "srt_translation#1",
-            "output_handle": "bin"
+            "node_id": "+typescript#3",
+            "output_handle": "srt_address"
           }
         },
         "to": {
@@ -339,14 +338,13 @@
       ]
     },
     {
-      "id": "78c1c84b-d838-4a86-a595-56515e989e08",
-      "selected": true,
+      "id": "7c782ecc-789c-4f48-9283-56d23f45e6ae",
       "connection": {
         "from": {
           "type": "from_node",
           "source": {
-            "node_id": "read_media_to_ffmpeg#2",
-            "output_handle": "ffmpeg_source"
+            "node_id": "nvidia_turbo#1",
+            "output_handle": "ffmepg_source"
           }
         },
         "to": {
@@ -432,6 +430,52 @@
       "gradientColor": [
         "var(--edge-json)",
         "var(--edge-json)"
+      ]
+    },
+    {
+      "id": "782ecc78-9c0f-4852-8356-d23f45e6aecf",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "srt_translation#1",
+            "output_handle": "bin"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "+typescript#3",
+            "input_handle": "binary"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    },
+    {
+      "id": "2ecc789c-0f48-4283-96d2-3f45e6aecf83",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "read_media_to_ffmpeg#2",
+            "output_handle": "ffmpeg_source"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "nvidia_turbo#1",
+            "input_handle": "ffmepg_source"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-nodejs)",
+        "var(--edge-nodejs)"
       ]
     }
   ]
