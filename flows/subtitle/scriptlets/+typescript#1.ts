@@ -13,7 +13,7 @@ export default async function (
   inputs: Inputs,
   context: Context<Inputs, Outputs>
 ): Promise<Outputs> {
-  const save_address = `${inputs.folder_address}/${inputs.name}.mp4`;
+  const save_address = `${inputs.folder_address}/${inputs.name}_subtitle.mp4`;
   try {
     await new Promise((resolve, reject) => {
       inputs.origin_source

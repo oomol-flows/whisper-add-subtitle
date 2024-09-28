@@ -13,6 +13,9 @@ outputs_def:
   - handle: file_address
     json_schema:
       type: string
+  - handle: file_name
+    json_schema:
+      type: string
 icon: ":fa6-solid:file-import:currentColor:"
 ui:
   default_width: 350

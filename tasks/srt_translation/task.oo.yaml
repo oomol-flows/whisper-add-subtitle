@@ -36,7 +36,7 @@ inputs_def:
         - English
         - Chinese
         - Japanese
-    value: Japanese
+    value: Chinese
 outputs_def:
   - handle: bin
     description: Output

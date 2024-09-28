@@ -3,7 +3,7 @@ nodes:
     node_id: read_media_to_ffmpeg#1
     inputs_from:
       - handle: video_source
-        value: /oomol-storage/video/raw.mp4
+        value: /oomol-storage/video/飞书20240928-122351.mp4
   - task: self::audio_video_separation
     node_id: audio_video_separation#1
     inputs_from:
@@ -23,6 +23,9 @@ nodes:
         value: /oomol-storage/audio
       - handle: file_name
         value: raw
+        from_node:
+          - node_id: read_media_to_ffmpeg#1
+            output_handle: file_name
       - handle: formate
         value: mp3
   - task:
@@ -164,6 +167,9 @@ nodes:
         value: /oomol-storage/video
       - handle: name
         value: new_video
+        from_node:
+          - node_id: read_media_to_ffmpeg#1
+            output_handle: file_name
       - handle: origin_source
         from_node:
           - node_id: nvidia_turbo#1
@@ -203,7 +209,7 @@ nodes:
           - node_id: string_encoder#1
             output_handle: binary
       - handle: file_name
-        value: record99
+        value: source_lan
       - handle: output_folder
         value: /oomol-storage/srt
   - task: self::read_media_to_ffmpeg
@@ -231,7 +237,7 @@ nodes:
       - handle: source_lan
         value: English
       - handle: target_lan
-        value: Japanese
+        value: Chinese
   - task:
       ui:
         default_width: 530
@@ -267,7 +273,7 @@ nodes:
           - node_id: srt_translation#1
             output_handle: bin
       - handle: file_name
-        value: record99
+        value: target_lan
       - handle: output_folder
         value: /oomol-storage/srt
   - task: self::nvidia_turbo
