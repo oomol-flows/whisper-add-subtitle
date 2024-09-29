@@ -42,7 +42,7 @@
         "y": 241
       },
       "width": 434,
-      "height": 560
+      "height": 329
     },
     {
       "id": "+python#1",
@@ -118,7 +118,7 @@
       "cardCollapse": {
         "scriptlet": true
       },
-      "selected": true,
+      "selected": false,
       "dragging": false,
       "position": {
         "x": 3261,
@@ -244,6 +244,30 @@
       ]
     },
     {
+      "id": "2d84a7ee-0f8b-492b-8be0-91a88833b8c0",
+      "selected": false,
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "read_media_to_ffmpeg#1",
+            "output_handle": "file_name"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "save_and_preivew#1",
+            "input_handle": "file_name"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    },
+    {
       "id": "3c6da2a4-3399-458b-9184-8a9a6f5c522c",
       "selected": false,
       "connection": {
@@ -317,6 +341,7 @@
     },
     {
       "id": "117c782e-cc78-4c0f-8852-8356d23f45e6",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
@@ -339,7 +364,32 @@
       ]
     },
     {
+      "id": "84a7ee0f-8b59-4b4b-a091-a88833b8c050",
+      "selected": false,
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "read_media_to_ffmpeg#1",
+            "output_handle": "file_name"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "+typescript#1",
+            "input_handle": "name"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    },
+    {
       "id": "7c782ecc-789c-4f48-9283-56d23f45e6ae",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
@@ -435,6 +485,7 @@
     },
     {
       "id": "782ecc78-9c0f-4852-8356-d23f45e6aecf",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",
@@ -458,6 +509,7 @@
     },
     {
       "id": "2ecc789c-0f48-4283-96d2-3f45e6aecf83",
+      "selected": false,
       "connection": {
         "from": {
           "type": "from_node",

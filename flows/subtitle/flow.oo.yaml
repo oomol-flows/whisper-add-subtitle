@@ -20,7 +20,7 @@ nodes:
           - node_id: audio_video_separation#1
             output_handle: ffmpeg_only_audio
       - handle: file_address
-        value: /oomol-storage/audio
+        value: /oomol-storage
       - handle: file_name
         value: raw
         from_node:
@@ -164,7 +164,7 @@ nodes:
           - node_id: +typescript#3
             output_handle: srt_address
       - handle: folder_address
-        value: /oomol-storage/video
+        value: /oomol-storage
       - handle: name
         value: new_video
         from_node:
@@ -211,7 +211,7 @@ nodes:
       - handle: file_name
         value: source_lan
       - handle: output_folder
-        value: /oomol-storage/srt
+        value: /oomol-storage
   - task: self::read_media_to_ffmpeg
     node_id: read_media_to_ffmpeg#2
     inputs_from:
@@ -275,7 +275,7 @@ nodes:
       - handle: file_name
         value: target_lan
       - handle: output_folder
-        value: /oomol-storage/srt
+        value: /oomol-storage
   - task: self::nvidia_turbo
     node_id: nvidia_turbo#1
     inputs_from:
